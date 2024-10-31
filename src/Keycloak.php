@@ -20,6 +20,7 @@ use Fschmtt\Keycloak\Resource\ServerInfo;
 use Fschmtt\Keycloak\Resource\Users;
 use Fschmtt\Keycloak\Serializer\Factory as SerializerFactory;
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\ClientInterface;
 
 class Keycloak
 {
