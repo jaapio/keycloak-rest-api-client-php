@@ -165,6 +165,7 @@ use Fschmtt\Keycloak\Type\Map;
  * @method self withBrowserFlow(?string $value)
  * @method self withBrowserSecurityHeaders(?array $value)
  * @method self withBruteForceProtected(?bool $value)
+ * @method self withBruteForceStrategy(?string $value)
  * @method self withClientAuthenticationFlow(?string $value)
  * @method self withClientOfflineSessionIdleTimeout(?int $value)
  * @method self withClientOfflineSessionMaxLifespan(?int $value)
@@ -275,6 +276,7 @@ use Fschmtt\Keycloak\Type\Map;
  * @method self withWebAuthnPolicyRpId(?string $value)
  * @method self withWebAuthnPolicySignatureAlgorithms(?array $value)
  * @method self withWebAuthnPolicyUserVerificationRequirement(?string $value)
+ * @method self withOrganizationsEnabled(?bool $value)
  *
  * @codeCoverageIgnore
  */
@@ -298,6 +300,8 @@ class Realm extends Representation
         protected ?string $browserFlow = null,
         protected ?Map $browserSecurityHeaders = null,
         protected ?bool $bruteForceProtected = null,
+        #[Since('26.0.0')]
+        protected ?string $bruteForceStrategy = null,
         protected ?string $clientAuthenticationFlow = null,
         protected ?int $clientOfflineSessionIdleTimeout = null,
         protected ?int $clientOfflineSessionMaxLifespan = null,
@@ -427,6 +431,9 @@ class Realm extends Representation
         /** @var string[]|null */
         protected ?array $webAuthnPolicySignatureAlgorithms = null,
         protected ?string $webAuthnPolicyUserVerificationRequirement = null,
+
+        #[Since('25.0.0')]
+        protected ?bool $organizationsEnabled = null,
     ) {
     }
 }
