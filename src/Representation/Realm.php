@@ -32,6 +32,7 @@ use Fschmtt\Keycloak\Type\Map;
  * @method bool|null getAdminEventsDetailsEnabled()
  * @method bool|null getAdminEventsEnabled()
  * @method string|null getAdminTheme()
+ * @method bool|null getAdminPermissionsEnabled()
  * @method Map|null getAttributes()
  * @method array|null getAuthenticationFlows()
  * @method array|null getAuthenticatorConfig()
@@ -125,6 +126,7 @@ use Fschmtt\Keycloak\Type\Map;
  * @method bool|null getUserManagedAccessAllowed()
  * @method array|null getUsers()
  * @method bool|null getVerifyEmail()
+ * @method bool|null getVerifiableCredentialsEnabled()
  * @method int|null getWaitIncrementSeconds()
  * @method array|null getWebAuthnPolicyAcceptableAaguids()
  * @method string|null getWebAuthnPolicyAttestationConveyancePreference()
@@ -158,6 +160,7 @@ use Fschmtt\Keycloak\Type\Map;
  * @method self withActionTokenGeneratedByUserLifespan(?int $value)
  * @method self withAdminEventsDetailsEnabled(?bool $value)
  * @method self withAdminEventsEnabled(?bool $value)
+ * @method self withAdminPermissionsEnabled(?bool $value)
  * @method self withAdminTheme(?string $value)
  * @method self withAttributes(?Map $value)
  * @method self withAuthenticationFlows(?array $value)
@@ -253,6 +256,7 @@ use Fschmtt\Keycloak\Type\Map;
  * @method self withUserManagedAccessAllowed(?bool $value)
  * @method self withUsers(?array $value)
  * @method self withVerifyEmail(?bool $value)
+ * @method self withVerifiableCredentialsEnabled(?bool $value)
  * @method self withWaitIncrementSeconds(?int $value)
  * @method self withWebAuthnPolicyAcceptableAaguids(?array $value)
  * @method self withWebAuthnPolicyAttestationConveyancePreference(?string $value)
@@ -293,6 +297,8 @@ class Realm extends Representation
         protected ?int $actionTokenGeneratedByUserLifespan = null,
         protected ?bool $adminEventsDetailsEnabled = null,
         protected ?bool $adminEventsEnabled = null,
+        #[Since('26.0.0')]
+        protected ?bool $adminPermissionsEnabled = null,
         protected ?string $adminTheme = null,
         protected ?Map $attributes = null,
         protected ?AuthenticationFlowCollection $authenticationFlows = null,
@@ -400,6 +406,8 @@ class Realm extends Representation
         protected ?bool $userManagedAccessAllowed = null,
         protected ?UserCollection $users = null,
         protected ?bool $verifyEmail = null,
+        #[Since('26.0.0')]
+        protected ?bool $verifiableCredentialsEnabled = null,
         protected ?int $waitIncrementSeconds = null,
         /** @var string[]|null */
         protected ?array $webAuthnPolicyAcceptableAaguids = null,
